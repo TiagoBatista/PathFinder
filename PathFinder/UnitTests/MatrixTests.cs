@@ -4,10 +4,10 @@ using Xunit;
 
 namespace UnitTests;
 
-public class UnitTest1
+public class MatrixTests
 {
     [Fact]
-    public void Test1()
+    public void Can_Set_Path()
     {
         var sut = new Matrix(10, 10);
 
