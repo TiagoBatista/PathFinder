@@ -1,14 +1,15 @@
 ﻿using PathFinder.Algorithms;
-using PathFinder.Matrix;
+using PathFinder.Models;
 
 var matrix = new Matrix(10, 10);
 
-IAlgorithm algorithm = new Dijkstra(matrix, (0,1), (9,9));
+var algorithm = new Dijkstra();
 
-List<(int,int)> path = algorithm.Solve();
+var endPoint = new Point(9,9);
+var startPoint = new Point(0,1);
+var path = algorithm.Solve(matrix, startPoint, endPoint);
 
 matrix.SetSolution(path);
 
 Console.WriteLine(matrix);
-
 Console.ReadLine();

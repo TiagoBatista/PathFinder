@@ -1,4 +1,4 @@
-namespace PathFinder.Matrix;
+namespace PathFinder.Models;
 
 public class Cell
 {
@@ -9,13 +9,13 @@ public class Cell
         return $"{(int)_state}";
     }
 
-    public void SetSolution()
+    public void MarkAsPartOfSolution()
     {
         if (_state == State.Wall)
         {
             throw new Exception("Ran into a wall!");
         }
-        
+
         _state = State.Solution;
     }
 }

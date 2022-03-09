@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace PathFinder.Matrix;
+namespace PathFinder.Models;
 
 public class Matrix
 {
@@ -32,7 +32,7 @@ public class Matrix
             for (int j = 0; j < _cells.GetLength(1); j++)
             {
                 sb.Append(' ');
-                sb.Append(_cells[i,j]);
+                sb.Append(_cells[i, j]);
             }
 
             sb.Append("\n");
@@ -41,8 +41,8 @@ public class Matrix
         return sb.ToString();
     }
 
-    public void SetSolution(List<(int, int)> path)
+    public void SetSolution(List<Point> path)
     {
-        path.ForEach(c => _cells[c.Item1,c.Item2].SetSolution());
+        path.ForEach(p => _cells[p.x, p.y].MarkAsPartOfSolution());
     }
 }

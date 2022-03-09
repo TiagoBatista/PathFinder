@@ -1,6 +1,8 @@
+using PathFinder.Models;
+
 namespace PathFinder.Algorithms;
 
 public interface IAlgorithm
 {
-    List<(int, int)> Solve();
+    List<Point> Solve(Matrix matrix, Point startPoint, Point endPoint);
 }
